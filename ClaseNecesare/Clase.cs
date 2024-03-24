@@ -11,6 +11,7 @@ namespace ClaseNecesare
         public string NumeVanzator { get; set; }
         public string NumeCumparator { get; set; }
         public string TipMasina { get; set; }
+        public string ModelMasina { get; set; }
         public int AnFabricatie { get; set; }
         public string Culoare { get; set; }
         public string Optiuni { get; set; }
@@ -20,9 +21,34 @@ namespace ClaseNecesare
 
     public class RaportAuto
     {
-        public void CeaMaiCautataMasina(string firmaSauModel, DateTime dataDeLa, DateTime dataPanaLa)
+        public void CeaMaiCautataMasina(List<TranzactieAuto> tranzactii, string firmasiModel, DateTime dataDeLa, DateTime dataPanaLa)
         {
-            // cod ..
+            int numarAparitii = 0;
+            string ceaMaiCautataMasina = "";
+
+            foreach (var tranzactie in tranzactii)
+            {
+                if ((tranzactie.TipMasina == firmasiModel || tranzactie.ModelMasina == firmasiModel) && tranzactie.DataTranzactie >= dataDeLa && tranzactie.DataTranzactie <= dataPanaLa)
+                {
+                    int aparitiiCurent = 0;
+                    foreach (var tranzactieInner in tranzactii)
+                    {
+                        if ((tranzactieInner.TipMasina == tranzactie.TipMasina || tranzactieInner.ModelMasina == tranzactie.ModelMasina) && tranzactieInner.DataTranzactie >= dataDeLa && tranzactieInner.DataTranzactie <= dataPanaLa)
+                            aparitiiCurent++;
+                    }
+
+                    if (aparitiiCurent > numarAparitii)
+                    {
+                        numarAparitii = aparitiiCurent;
+                        ceaMaiCautataMasina = $"{tranzactie.TipMasina} {tranzactie.ModelMasina}";
+                    }
+                }
+            }
+
+            if (ceaMaiCautataMasina != "")
+                Console.WriteLine($"Cea mai cautata masina intre {dataDeLa:yyyy-MM-dd} si {dataPanaLa:yyyy-MM-dd}: {ceaMaiCautataMasina}");
+            else
+                Console.WriteLine($"Nu s-a gasit nicio masina in perioada specificata.");
         }
 
         public void GraficPretPentruModel(string model, DateTime dataDeLa, DateTime dataPanaLa)
