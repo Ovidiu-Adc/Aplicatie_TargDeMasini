@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using ClaseNecesare;
 
 namespace Aplicatie_TargDeMasini
 {
