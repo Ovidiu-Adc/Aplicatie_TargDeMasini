@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClaseNecesare
+namespace Clase
 {
     public class TranzactieAuto
     {
@@ -13,22 +13,44 @@ namespace ClaseNecesare
         public string TipMasina { get; set; }
         public string ModelMasina { get; set; }
         public int AnFabricatie { get; set; }
-        public string Culoare { get; set; }
-        public string Optiuni { get; set; }
+        public Culoare Culoare { get; set; }
+        public List<Optiuni> Optiuni { get; set; }
+
         public DateTime DataTranzactie { get; set; }
         public decimal Pret { get; set; }
     }
 
+    public enum Culoare
+    {
+        Rosu,
+        Alb,
+        Negru,
+        Albastru,
+        Gri
+    }
+
+    [Flags]
+    public enum Optiuni
+    {
+        CutieAutomata = 1,
+        CutieManuala=2,
+        AerConditionat = 3,      
+        NavigatieGPS=4,
+        ScauneIncalzite=5,
+        SenzoriParcare=6,
+        SistemFranareAutomata=7
+    }
+
     public class RaportAuto
     {
-        public void CeaMaiCautataMasina(List<TranzactieAuto> tranzactii, string firmasiModel, DateTime dataDeLa, DateTime dataPanaLa)
+        public void CeaMaiCautataMasina(List<TranzactieAuto> tranzactii, string firmasauModel, DateTime dataDeLa, DateTime dataPanaLa)
         {
             int numarAparitii = 0;
             string ceaMaiCautataMasina = "";
 
             foreach (var tranzactie in tranzactii)
             {
-                if ((tranzactie.TipMasina == firmasiModel || tranzactie.ModelMasina == firmasiModel) && tranzactie.DataTranzactie >= dataDeLa && tranzactie.DataTranzactie <= dataPanaLa)
+                if ((tranzactie.TipMasina == firmasauModel || tranzactie.ModelMasina == firmasauModel) && tranzactie.DataTranzactie >= dataDeLa && tranzactie.DataTranzactie <= dataPanaLa)
                 {
                     int aparitiiCurent = 0;
                     foreach (var tranzactieInner in tranzactii)

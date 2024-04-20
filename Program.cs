@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ClaseNecesare;
+using Clase;
 
 namespace Aplicatie_TargDeMasini
 {
@@ -53,10 +53,36 @@ namespace Aplicatie_TargDeMasini
             string modelMasina = Console.ReadLine();
             Console.Write("An fabricatie: ");
             int anFabricatie = int.Parse(Console.ReadLine());
-            Console.Write("Culoare: ");
-            string culoare = Console.ReadLine();
-            Console.Write("Optiune: ");
-            string optiuni = Console.ReadLine();
+
+            // Selectare culoare
+            Console.WriteLine("Culoare:");
+            foreach (Culoare culoare in Enum.GetValues(typeof(Culoare)))
+            {
+                Console.WriteLine($"{(int)culoare}. {culoare}");
+            }
+            Console.Write("Selectati o culoare: ");
+            int culoareIndex = int.Parse(Console.ReadLine());
+            Culoare culoareSelectata = (Culoare)culoareIndex;
+
+            // Selectare optiuni
+            Console.WriteLine("Optiuni:");
+            foreach (Optiuni optiune in Enum.GetValues(typeof(Optiuni)))
+            {
+                Console.WriteLine($"{(int)optiune}. {optiune}");
+            }
+            Console.Write("Selectati optiunile: ");
+            string optiuniInput = Console.ReadLine();
+            string[] optiuniArray = optiuniInput.Split(' ');
+            List<Optiuni> optiuniSelectate = new List<Optiuni>();
+            foreach (string optiuneString in optiuniArray)
+            {
+                if (Enum.TryParse(optiuneString.Trim(), out Optiuni optiune))
+                {
+                    optiuniSelectate.Add(optiune);
+                }
+            }
+
+
             Console.Write("Data tranzactie (YYYY-MM-DD): ");
             DateTime dataTranzactie = DateTime.Parse(Console.ReadLine());
             Console.Write("Pret: ");
@@ -69,8 +95,8 @@ namespace Aplicatie_TargDeMasini
                 TipMasina = tipMasina,
                 ModelMasina = modelMasina,
                 AnFabricatie = anFabricatie,
-                Culoare = culoare,
-                Optiuni = optiuni,
+                Culoare = culoareSelectata,
+                Optiuni = optiuniSelectate,
                 DataTranzactie = dataTranzactie,
                 Pret = pret
             });
@@ -83,14 +109,21 @@ namespace Aplicatie_TargDeMasini
             Console.WriteLine("Tranzactii inregistrate:");
             foreach (var tranzactie in tranzactii)
             {
-                Console.WriteLine($"\nVanzator: {tranzactie.NumeVanzator}\nCumparator: {tranzactie.NumeCumparator}\nTip masina: {tranzactie.TipMasina}\nModel masina: {tranzactie.ModelMasina}\nAn fabricatie: {tranzactie.AnFabricatie}\nCuloare: {tranzactie.Culoare}\nOptiuni: {tranzactie.Optiuni}\nData tranzactie: {tranzactie.DataTranzactie.ToString("yyyy-MM-dd")}\nPret: {tranzactie.Pret}$\n");
+                Console.WriteLine($"\nVanzator: {tranzactie.NumeVanzator}\nCumparator: {tranzactie.NumeCumparator}\nTip masina: {tranzactie.TipMasina}\nModel masina: {tranzactie.ModelMasina}\nAn fabricatie: {tranzactie.AnFabricatie}\nCuloare: {tranzactie.Culoare}\nOptiuni:");
+
+                foreach (var optiune in tranzactie.Optiuni)
+                {
+                    Console.WriteLine(optiune.ToString());
+                }
+
+                Console.WriteLine($"Data tranzactie: {tranzactie.DataTranzactie.ToString("yyyy-MM-dd")}\nPret: {tranzactie.Pret}$\n");
             }
         }
 
         static void CeaMaiCautataMasina(List<TranzactieAuto> tranzactii)
         {
-            Console.WriteLine("Introduceti firma masinii: ");
-            string firmasiModel = Console.ReadLine();
+            Console.WriteLine("Introduceti firma sau modelul masinii: ");
+            string firmasauModel = Console.ReadLine();
 
             Console.Write("Introduceti data de la (YYYY-MM-DD): ");
             DateTime dataDeLa = DateTime.Parse(Console.ReadLine());
@@ -99,7 +132,7 @@ namespace Aplicatie_TargDeMasini
             DateTime dataPanaLa = DateTime.Parse(Console.ReadLine());
 
             RaportAuto raportAuto = new RaportAuto();
-            raportAuto.CeaMaiCautataMasina(tranzactii, firmasiModel, dataDeLa, dataPanaLa);
+            raportAuto.CeaMaiCautataMasina(tranzactii, firmasauModel, dataDeLa, dataPanaLa);
         }
 
     }
