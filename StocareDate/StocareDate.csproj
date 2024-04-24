@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{039C73FD-26AD-4D12-8883-C2BC74855B0F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Aplicatie_TargDeMasini</RootNamespace>
-    <AssemblyName>Aplicatie_TargDeMasini</AssemblyName>
+    <ProjectGuid>{66E4ACC9-047B-437A-9188-AE414A03D3FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>StocareDate</RootNamespace>
+    <AssemblyName>StocareDate</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,11 +32,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,20 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="FisierText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="ClaseNecesare\Clase.csproj">
+    <ProjectReference Include="..\ClaseNecesare\Clase.csproj">
       <Project>{4b934056-d73c-4b33-bbd1-b08b0a1a3746}</Project>
       <Name>Clase</Name>
-    </ProjectReference>
-    <ProjectReference Include="StocareDate\StocareDate.csproj">
-      <Project>{66e4acc9-047b-437a-9188-ae414a03d3fb}</Project>
-      <Name>StocareDate</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

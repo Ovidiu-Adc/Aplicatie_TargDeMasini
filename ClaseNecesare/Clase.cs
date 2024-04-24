@@ -8,6 +8,9 @@ namespace Clase
 {
     public class TranzactieAuto
     {
+        private const char separator_principal = ';';
+        private const char separator_secundar = ' ';
+
         public string NumeVanzator { get; set; }
         public string NumeCumparator { get; set; }
         public string TipMasina { get; set; }
@@ -22,11 +25,11 @@ namespace Clase
 
     public enum Culoare
     {
-        Rosu,
-        Alb,
-        Negru,
-        Albastru,
-        Gri
+        Rosu = 1,
+        Alb = 2,
+        Negru = 3,
+        Albastru = 4,
+        Gri = 5
     }
 
     [Flags]
@@ -40,6 +43,8 @@ namespace Clase
         SenzoriParcare=6,
         SistemFranareAutomata=7
     }
+
+    
 
     public class RaportAuto
     {
@@ -81,6 +86,29 @@ namespace Clase
         public void TranzactiiPeZi(DateTime zi)
         {
             // cod ..
+        }
+
+        public static string OptiuniToString(List<Optiuni> optiuni)
+        {
+            return string.Join(", ", optiuni.Select(o => o.ToString()));
+        }
+
+        public static string TranzactieToString(TranzactieAuto tranzactie)
+        {
+            // Convertim lista de opțiuni într-un șir de caractere
+            string optiuniAsString = OptiuniToString(tranzactie.Optiuni);
+            
+            string tranzactieAsString = $"{tranzactie.NumeVanzator};" +
+                                        $"{tranzactie.NumeCumparator};" +
+                                        $"{tranzactie.TipMasina};" +
+                                        $"{tranzactie.ModelMasina};" +
+                                        $"{tranzactie.AnFabricatie};" +
+                                        $"{tranzactie.Culoare};" +
+                                        $"{optiuniAsString};" +
+                                        $"{tranzactie.DataTranzactie:yyyy-MM-dd};" +
+                                        $"{tranzactie.Pret}";
+
+            return tranzactieAsString;
         }
     }
 }

@@ -1,19 +1,30 @@
 ﻿using System;
+using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Linq;
 using Clase;
+using StocareDate;
+using static System.Net.Mime.MediaTypeNames;
+using System.Reflection;
 
 namespace Aplicatie_TargDeMasini
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
+        private static string numeFisier = "tranzactii.txt";
+        private static string caleFisier = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName, numeFisier);
+
+        private static ManagerTranzactii adminTranzactii = new ManagerTranzactii(caleFisier);
+
+        static void Main()
         {
             List<TranzactieAuto> tranzactii = new List<TranzactieAuto>();
 
             bool continua = true;
             while (continua)
             {
-                
                 Console.WriteLine("1. Adaugare tranzactie");
                 Console.WriteLine("2. Afisare tranzactii");
                 Console.WriteLine("3. Cea mai cautata masina intr-o anumita perioada");
@@ -52,16 +63,23 @@ namespace Aplicatie_TargDeMasini
             Console.Write("Model: ");
             string modelMasina = Console.ReadLine();
             Console.Write("An fabricatie: ");
-            int anFabricatie = int.Parse(Console.ReadLine());
+            int anFabricatie;
+            while (!int.TryParse(Console.ReadLine(), out anFabricatie))
+            {
+                Console.WriteLine("Introduceti un an de fabricatie valid.");
+            }
 
-            // Selectare culoare
             Console.WriteLine("Culoare:");
             foreach (Culoare culoare in Enum.GetValues(typeof(Culoare)))
             {
                 Console.WriteLine($"{(int)culoare}. {culoare}");
             }
             Console.Write("Selectati o culoare: ");
-            int culoareIndex = int.Parse(Console.ReadLine());
+            int culoareIndex;
+            while (!int.TryParse(Console.ReadLine(), out culoareIndex) || !Enum.IsDefined(typeof(Culoare), culoareIndex))
+            {
+                Console.WriteLine("Selectati o culoare valida.");
+            }
             Culoare culoareSelectata = (Culoare)culoareIndex;
 
             // Selectare optiuni
@@ -85,10 +103,15 @@ namespace Aplicatie_TargDeMasini
 
             Console.Write("Data tranzactie (YYYY-MM-DD): ");
             DateTime dataTranzactie = DateTime.Parse(Console.ReadLine());
-            Console.Write("Pret: ");
-            decimal pret = decimal.Parse(Console.ReadLine());
 
-            tranzactii.Add(new TranzactieAuto
+            Console.Write("Pret: ");
+            decimal pret;
+            while (!decimal.TryParse(Console.ReadLine(), out pret))
+            {
+                Console.WriteLine("Introduceti un pret valid.");
+            }
+
+            TranzactieAuto tranzactie = new TranzactieAuto
             {
                 NumeVanzator = numeVanzator,
                 NumeCumparator = numeCumparator,
@@ -99,7 +122,13 @@ namespace Aplicatie_TargDeMasini
                 Optiuni = optiuniSelectate,
                 DataTranzactie = dataTranzactie,
                 Pret = pret
-            });
+            };
+
+            // Adăugare tranzacție în lista locală
+            tranzactii.Add(tranzactie);
+
+            // Scriere in fisier
+            adminTranzactii.AdaugaTranzactie(tranzactie);
 
             Console.WriteLine("Tranzactia a fost adaugata cu succes.");
         }
@@ -109,14 +138,8 @@ namespace Aplicatie_TargDeMasini
             Console.WriteLine("Tranzactii inregistrate:");
             foreach (var tranzactie in tranzactii)
             {
-                Console.WriteLine($"\nVanzator: {tranzactie.NumeVanzator}\nCumparator: {tranzactie.NumeCumparator}\nTip masina: {tranzactie.TipMasina}\nModel masina: {tranzactie.ModelMasina}\nAn fabricatie: {tranzactie.AnFabricatie}\nCuloare: {tranzactie.Culoare}\nOptiuni:");
-
-                foreach (var optiune in tranzactie.Optiuni)
-                {
-                    Console.WriteLine(optiune.ToString());
-                }
-
-                Console.WriteLine($"Data tranzactie: {tranzactie.DataTranzactie.ToString("yyyy-MM-dd")}\nPret: {tranzactie.Pret}$\n");
+                string optiuniAsString = RaportAuto.OptiuniToString(tranzactie.Optiuni); 
+                Console.WriteLine($"\nVanzator: {tranzactie.NumeVanzator}\nCumparator: {tranzactie.NumeCumparator}\nTip masina: {tranzactie.TipMasina}\nModel masina: {tranzactie.ModelMasina}\nAn fabricatie: {tranzactie.AnFabricatie}\nCuloare: {tranzactie.Culoare}\nOptiuni: {optiuniAsString}\nData tranzactie: {tranzactie.DataTranzactie.ToString("yyyy-MM-dd")}\nPret: {tranzactie.Pret}$\n");
             }
         }
 
@@ -134,6 +157,5 @@ namespace Aplicatie_TargDeMasini
             RaportAuto raportAuto = new RaportAuto();
             raportAuto.CeaMaiCautataMasina(tranzactii, firmasauModel, dataDeLa, dataPanaLa);
         }
-
     }
 }

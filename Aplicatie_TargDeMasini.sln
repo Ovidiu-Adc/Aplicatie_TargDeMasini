@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicatie_TargDeMasini", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase", "ClaseNecesare\Clase.csproj", "{4B934056-D73C-4B33-BBD1-B08B0A1A3746}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocareDate", "StocareDate\StocareDate.csproj", "{66E4ACC9-047B-437A-9188-AE414A03D3FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TargDeMasiniInterfata", "TargDeMasiniInterfata\TargDeMasiniInterfata.csproj", "{FFFDAE04-09CC-421E-ACF5-47334E16EA00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{4B934056-D73C-4B33-BBD1-B08B0A1A3746}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B934056-D73C-4B33-BBD1-B08B0A1A3746}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B934056-D73C-4B33-BBD1-B08B0A1A3746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E4ACC9-047B-437A-9188-AE414A03D3FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E4ACC9-047B-437A-9188-AE414A03D3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E4ACC9-047B-437A-9188-AE414A03D3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E4ACC9-047B-437A-9188-AE414A03D3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFFDAE04-09CC-421E-ACF5-47334E16EA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFFDAE04-09CC-421E-ACF5-47334E16EA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFFDAE04-09CC-421E-ACF5-47334E16EA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFFDAE04-09CC-421E-ACF5-47334E16EA00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

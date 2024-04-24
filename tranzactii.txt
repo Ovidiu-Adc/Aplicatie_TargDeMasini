@@ -1,0 +1,2 @@
+Ion Ionescu;Maria Ioana;Opel;Astra;2017;Rosu;CutieManuala, AerConditionat, NavigatieGPS;2024-04-24;15000
+Alex Mihai;Elena Stan;Ford;Focus;2015;Albastru;CutieAutomata, ScauneIncalzite, SenzoriParcare;2024-03-15;16000
