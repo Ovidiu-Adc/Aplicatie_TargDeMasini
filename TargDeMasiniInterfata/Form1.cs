@@ -35,7 +35,7 @@ namespace TargDeMasiniInterfata
             InitializeComponent();
             InitializeCustomComponents();
 
-            this.Size = new Size(1200, 500);
+            this.Size = new Size(1800, 800);
 
             lblVanzator = new Label();
             lblVanzator.Width = LATIME_CONTROL;
@@ -95,7 +95,7 @@ namespace TargDeMasiniInterfata
 
             lblPret = new Label();
             lblPret.Width = LATIME_CONTROL;
-            lblPret.Text = "Pret";
+            lblPret.Text = "Pret($)";
             lblPret.Left = 8 * DIMENSIUNE_PAS_X;
             lblPret.ForeColor = Color.DarkBlue;
             lblPret.Font = new Font("Arial", 12f, FontStyle.Bold);
@@ -110,6 +110,113 @@ namespace TargDeMasiniInterfata
             this.Controls.Add(lblOptiuni);
 
 
+            Label labelVanzator = new Label();
+            labelVanzator.Text = "Vanzator:";
+            labelVanzator.Width = 60;
+            labelVanzator.Location = new Point(1270, 40);
+            this.Controls.Add(labelVanzator);
+
+            Label labelCumparator = new Label();
+            labelCumparator.Text = "Cumparator:";
+            labelCumparator.Width = 66;
+            labelCumparator.Location = new Point(1258, 70);
+            this.Controls.Add(labelCumparator);
+
+            Label labelTipMasina = new Label();
+            labelTipMasina.Text = "Tip masina:";
+            labelTipMasina.Width = 70;
+            labelTipMasina.Location = new Point(1260, 100);
+            this.Controls.Add(labelTipMasina);
+
+            Label labelModelMasina = new Label();
+            labelModelMasina.Text = "Model masina:";
+            labelModelMasina.Width = 85;
+            labelModelMasina.Location = new Point(1245, 130);
+            this.Controls.Add(labelModelMasina);
+
+            Label labelAnFabrica = new Label();
+            labelAnFabrica.Text = "Anul fabricarii:";
+            labelAnFabrica.Width = 84;
+            labelAnFabrica.Location = new Point(1247, 160);
+            this.Controls.Add(labelAnFabrica);
+
+            Label labelCuloare = new Label();
+            labelCuloare.Text = "Culoare:";
+            labelCuloare.Width = 60;
+            labelCuloare.Location = new Point(1274, 190);
+            this.Controls.Add(labelCuloare);
+
+            Label labelOptiuni = new Label();
+            labelOptiuni.Text = "Optiuni:";
+            labelOptiuni.Width = 60;
+            labelOptiuni.Location = new Point(1276, 220);
+            this.Controls.Add(labelOptiuni);
+
+            Label labelData = new Label();
+            labelData.Text = "Data tranzactiei:";
+            labelData.Width = 90;
+            labelData.Location = new Point(1235, 250);
+            this.Controls.Add(labelData);
+
+            Label labelPret = new Label();
+            labelPret.Text = "Pret:";
+            labelPret.Width = 40;
+            labelPret.Location = new Point(1289, 280);
+            this.Controls.Add(labelPret);
+
+            TextBox textBoxNumeVanzator = new TextBox();
+            textBoxNumeVanzator.Location = new Point(1330, 38);
+            textBoxNumeVanzator.Width = 130;
+            this.Controls.Add(textBoxNumeVanzator);
+
+            TextBox textBoxCumparator = new TextBox();
+            textBoxCumparator.Location = new Point(1330, 68);
+            textBoxCumparator.Width = 130;
+            this.Controls.Add(textBoxCumparator);
+
+            TextBox textTipMasina = new TextBox();
+            textTipMasina.Location = new Point(1330, 98);
+            textTipMasina.Width = 130;
+            this.Controls.Add(textTipMasina);
+
+            TextBox textModelMasina = new TextBox();
+            textModelMasina.Location = new Point(1330, 128);
+            textModelMasina.Width = 130;
+            this.Controls.Add(textModelMasina);
+
+            TextBox textAnFabrica = new TextBox();
+            textAnFabrica.Location = new Point(1330, 158);
+            textAnFabrica.Width = 130;
+            this.Controls.Add(textAnFabrica);
+
+            /*ComboBox comboBoxCuloare = new ComboBox();
+            comboBoxCuloare.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxCuloare.Items.AddRange((object[])Enum.GetValues(typeof(Culoare)));
+            comboBoxCuloare.Width = 100;
+            comboBoxCuloare.Location = new Point(1330, 188);
+            this.Controls.Add(comboBoxCuloare);*/
+
+            TextBox textData = new TextBox();
+            textData.Location = new Point(1330, 248);
+            textData.Width = 130;
+            this.Controls.Add(textData);
+
+            TextBox textPret = new TextBox();
+            textPret.Location = new Point(1330, 278);
+            textPret.Width = 130;
+            this.Controls.Add(textPret);
+
+            Button buttonAdauga = new Button();
+            buttonAdauga.Text = "Adauga";
+            buttonAdauga.Location = new Point(1270, 308); 
+            //buttonAdauga.Click += ButtonAdauga_Click; 
+            this.Controls.Add(buttonAdauga);
+
+            Button buttonRefresh = new Button();
+            buttonRefresh.Text = "Refresh";
+            buttonRefresh.Location = new Point(1360, 308); 
+            //buttonRefresh.Click += ButtonRefresh_Click; 
+            this.Controls.Add(buttonRefresh);
         }
 
         private void InitializeCustomComponents()
