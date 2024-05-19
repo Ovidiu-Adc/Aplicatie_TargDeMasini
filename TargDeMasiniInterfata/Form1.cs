@@ -12,225 +12,206 @@ namespace TargDeMasiniInterfata
 {
     public partial class Form1 : Form
     {
-        private Label lblVanzator;
-        private Label lblCumparator;
-        private Label lblTipMasina;
-        private Label lblModelMasina;
-        private Label lblAnFabrica;
-        private Label lblCuloare;
-        private Label lblOptiuni;
-        private Label lblData;
-        private Label lblPret;
-
-        //private ManagerTranzactii managerTranzactii;
+        private ManagerTranzactii managerTranzactii;
         private List<TranzactieAuto> tranzactii;
-
         private const int LATIME_CONTROL = 100;
-        private const int DIMENSIUNE_PAS_Y = 80;
-        private const int DIMENSIUNE_PAS_X = 100;
-        private int indexRanduri = 0;
+        private const int SPATIU_INTRE_COLOANE = 0; 
+        private const int INALTIME_RAND = 40;
+
+        private TableLayoutPanel tableLayoutPanel;
 
         public Form1()
         {
             InitializeComponent();
             InitializeCustomComponents();
-
-            this.Size = new Size(1800, 800);
-
-            lblVanzator = new Label();
-            lblVanzator.Width = LATIME_CONTROL;
-            lblVanzator.Text = "Vanzator";
-            lblVanzator.Left = DIMENSIUNE_PAS_X;
-            lblVanzator.ForeColor = Color.DarkBlue;
-            lblVanzator.Font = new Font("Arial", 12f, FontStyle.Bold);
-            this.Controls.Add(lblVanzator);
-
-            lblCumparator = new Label();
-            lblCumparator.Width = LATIME_CONTROL;
-            lblCumparator.Text = "Cumparator";
-            lblCumparator.Left = 2 * DIMENSIUNE_PAS_X;
-            lblCumparator.ForeColor = Color.DarkBlue;
-            lblCumparator.Font = new Font("Arial", 12f, FontStyle.Bold);
-            this.Controls.Add(lblCumparator);
-
-            lblTipMasina = new Label();
-            lblTipMasina.Width = LATIME_CONTROL;
-            lblTipMasina.Text = "Tip Masina";
-            lblTipMasina.Left = 3 * DIMENSIUNE_PAS_X;
-            lblTipMasina.ForeColor = Color.DarkBlue;
-            lblTipMasina.Font = new Font("Arial", 12f, FontStyle.Bold);
-            this.Controls.Add(lblTipMasina);
-
-            lblModelMasina = new Label();
-            lblModelMasina.Width = LATIME_CONTROL;
-            lblModelMasina.Text = "Model Masina";
-            lblModelMasina.Left = 4 * DIMENSIUNE_PAS_X;
-            lblModelMasina.ForeColor = Color.DarkBlue;
-            lblModelMasina.Font = new Font("Arial", 12f, FontStyle.Bold);
-            this.Controls.Add(lblModelMasina);
-
-            lblAnFabrica = new Label();
-            lblAnFabrica.Width = LATIME_CONTROL;
-            lblAnFabrica.Text = "Anul fabricarii";
-            lblAnFabrica.Left = 5 * DIMENSIUNE_PAS_X;
-            lblAnFabrica.ForeColor = Color.DarkBlue;
-            lblAnFabrica.Font = new Font("Arial", 12f, FontStyle.Bold);
-            this.Controls.Add(lblAnFabrica);
-
-            lblCuloare = new Label();
-            lblCuloare.Width = LATIME_CONTROL;
-            lblCuloare.Text = "Culoare";
-            lblCuloare.Left = 6 * DIMENSIUNE_PAS_X;
-            lblCuloare.ForeColor = Color.DarkBlue;
-            lblCuloare.Font = new Font("Arial", 12f, FontStyle.Bold);
-            this.Controls.Add(lblCuloare);
-
-            lblData = new Label();
-            lblData.Width = LATIME_CONTROL;
-            lblData.Text = "Data tranzactiei";
-            lblData.Left = 7 * DIMENSIUNE_PAS_X;
-            lblData.ForeColor = Color.DarkBlue;
-            lblData.Font = new Font("Arial", 12f, FontStyle.Bold);
-            this.Controls.Add(lblData);
-
-            lblPret = new Label();
-            lblPret.Width = LATIME_CONTROL;
-            lblPret.Text = "Pret($)";
-            lblPret.Left = 8 * DIMENSIUNE_PAS_X;
-            lblPret.ForeColor = Color.DarkBlue;
-            lblPret.Font = new Font("Arial", 12f, FontStyle.Bold);
-            this.Controls.Add(lblPret);
-
-            lblOptiuni = new Label();
-            lblOptiuni.Width = LATIME_CONTROL * 6;
-            lblOptiuni.Text = "Optiuni";
-            lblOptiuni.Left = 10 * DIMENSIUNE_PAS_X;
-            lblOptiuni.ForeColor = Color.DarkBlue;
-            lblOptiuni.Font = new Font("Arial", 12f, FontStyle.Bold);
-            this.Controls.Add(lblOptiuni);
-
-
-            Label labelVanzator = new Label();
-            labelVanzator.Text = "Vanzator:";
-            labelVanzator.Width = 60;
-            labelVanzator.Location = new Point(1270, 40);
-            this.Controls.Add(labelVanzator);
-
-            Label labelCumparator = new Label();
-            labelCumparator.Text = "Cumparator:";
-            labelCumparator.Width = 66;
-            labelCumparator.Location = new Point(1258, 70);
-            this.Controls.Add(labelCumparator);
-
-            Label labelTipMasina = new Label();
-            labelTipMasina.Text = "Tip masina:";
-            labelTipMasina.Width = 70;
-            labelTipMasina.Location = new Point(1260, 100);
-            this.Controls.Add(labelTipMasina);
-
-            Label labelModelMasina = new Label();
-            labelModelMasina.Text = "Model masina:";
-            labelModelMasina.Width = 85;
-            labelModelMasina.Location = new Point(1245, 130);
-            this.Controls.Add(labelModelMasina);
-
-            Label labelAnFabrica = new Label();
-            labelAnFabrica.Text = "Anul fabricarii:";
-            labelAnFabrica.Width = 84;
-            labelAnFabrica.Location = new Point(1247, 160);
-            this.Controls.Add(labelAnFabrica);
-
-            Label labelCuloare = new Label();
-            labelCuloare.Text = "Culoare:";
-            labelCuloare.Width = 60;
-            labelCuloare.Location = new Point(1274, 190);
-            this.Controls.Add(labelCuloare);
-
-            Label labelOptiuni = new Label();
-            labelOptiuni.Text = "Optiuni:";
-            labelOptiuni.Width = 60;
-            labelOptiuni.Location = new Point(1276, 220);
-            this.Controls.Add(labelOptiuni);
-
-            Label labelData = new Label();
-            labelData.Text = "Data tranzactiei:";
-            labelData.Width = 90;
-            labelData.Location = new Point(1235, 250);
-            this.Controls.Add(labelData);
-
-            Label labelPret = new Label();
-            labelPret.Text = "Pret:";
-            labelPret.Width = 40;
-            labelPret.Location = new Point(1289, 280);
-            this.Controls.Add(labelPret);
-
-            TextBox textBoxNumeVanzator = new TextBox();
-            textBoxNumeVanzator.Location = new Point(1330, 38);
-            textBoxNumeVanzator.Width = 130;
-            this.Controls.Add(textBoxNumeVanzator);
-
-            TextBox textBoxCumparator = new TextBox();
-            textBoxCumparator.Location = new Point(1330, 68);
-            textBoxCumparator.Width = 130;
-            this.Controls.Add(textBoxCumparator);
-
-            TextBox textTipMasina = new TextBox();
-            textTipMasina.Location = new Point(1330, 98);
-            textTipMasina.Width = 130;
-            this.Controls.Add(textTipMasina);
-
-            TextBox textModelMasina = new TextBox();
-            textModelMasina.Location = new Point(1330, 128);
-            textModelMasina.Width = 130;
-            this.Controls.Add(textModelMasina);
-
-            TextBox textAnFabrica = new TextBox();
-            textAnFabrica.Location = new Point(1330, 158);
-            textAnFabrica.Width = 130;
-            this.Controls.Add(textAnFabrica);
-
-            /*ComboBox comboBoxCuloare = new ComboBox();
-            comboBoxCuloare.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxCuloare.Items.AddRange((object[])Enum.GetValues(typeof(Culoare)));
-            comboBoxCuloare.Width = 100;
-            comboBoxCuloare.Location = new Point(1330, 188);
-            this.Controls.Add(comboBoxCuloare);*/
-
-            TextBox textData = new TextBox();
-            textData.Location = new Point(1330, 248);
-            textData.Width = 130;
-            this.Controls.Add(textData);
-
-            TextBox textPret = new TextBox();
-            textPret.Location = new Point(1330, 278);
-            textPret.Width = 130;
-            this.Controls.Add(textPret);
-
-            Button buttonAdauga = new Button();
-            buttonAdauga.Text = "Adauga";
-            buttonAdauga.Location = new Point(1270, 308); 
-            //buttonAdauga.Click += ButtonAdauga_Click; 
-            this.Controls.Add(buttonAdauga);
-
-            Button buttonRefresh = new Button();
-            buttonRefresh.Text = "Refresh";
-            buttonRefresh.Location = new Point(1360, 308); 
-            //buttonRefresh.Click += ButtonRefresh_Click; 
-            this.Controls.Add(buttonRefresh);
+            string caleFisier = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName, "tranzactii.txt");
+            managerTranzactii = new ManagerTranzactii(caleFisier);
         }
 
         private void InitializeCustomComponents()
         {
+            this.Size = new Size(1800, 700);
 
+            // Cream un panel pentru a centra tableLayoutPanel in formular
+            Panel panelCentral = new Panel();
+            panelCentral.Dock = DockStyle.Fill;
+            this.Controls.Add(panelCentral);
+
+            tableLayoutPanel = new TableLayoutPanel();
+            tableLayoutPanel.Anchor = AnchorStyles.Right;
+            tableLayoutPanel.Size = new Size(1350, 350); // Ajustează dimensiunea după nevoie
+            tableLayoutPanel.Location = new Point(this.ClientSize.Width - tableLayoutPanel.Width, 115); // Ajustează poziția după nevoie
+            tableLayoutPanel.AutoScroll = true;
+            tableLayoutPanel.ColumnCount = 9;
+            tableLayoutPanel.RowCount = 1;
+
+            tableLayoutPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+
+            // Set column styles
+            for (int i = 0; i < 8; i++)
+            {
+                tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / 8));
+            }
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+
+            // Add table layout panel to the form
+            panelCentral.Controls.Add(tableLayoutPanel);
+
+            // Add titles to the table
+            string[] titluri = { "Vanzator", "Cumparator", "Tip Masina", "Model Masina", "Anul fabricarii", "Culoare", "Data tranzactiei", "Pret(€)", "Optiuni" };
+            for (int i = 0; i < titluri.Length; i++)
+            {
+                Label label = new Label();
+                label.Text = titluri[i];
+                label.ForeColor = Color.Black;
+                label.Font = new Font("Segoe UI", 13f, FontStyle.Bold); // Dimensiunea textului micșorată
+                //label.TextAlign = ContentAlignment.MiddleLeft;
+                label.Margin = new Padding(SPATIU_INTRE_COLOANE); // Eliminăm complet distanța între coloane
+                label.Size = new Size(120, INALTIME_RAND);
+                tableLayoutPanel.Controls.Add(label, i, 0);
+            }
+        }
+        
+        private void btnAdauga_Click(object sender, EventArgs e)
+        {
+            bool valid = true;
+
+            // Reset label colors
+            lblVanzator.ForeColor = Color.White;
+            lblCump.ForeColor = Color.White;
+            lblTip.ForeColor = Color.White;
+            lblModel.ForeColor = Color.White;
+            lblFabricare.ForeColor = Color.White;
+            lblCuloare.ForeColor = Color.White;
+            lblPret.ForeColor = Color.White;
+            lblOptiuni.ForeColor = Color.White;
+
+            // Validate fields
+            if (string.IsNullOrWhiteSpace(txtVanzator.Text))
+            {
+                lblVanzator.ForeColor = Color.Red;
+                valid = false;
+            }
+            if (string.IsNullOrWhiteSpace(txtCump.Text))
+            {
+                lblCump.ForeColor = Color.Red;
+                valid = false;
+            }
+            if (string.IsNullOrWhiteSpace(txtTip.Text))
+            {
+                lblTip.ForeColor = Color.Red;
+                valid = false;
+            }
+            if (string.IsNullOrWhiteSpace(txtModel.Text))
+            {
+                lblModel.ForeColor = Color.Red;
+                valid = false;
+            }
+            if (!int.TryParse(txtFabricare.Text, out int anFabricatie))
+            {
+                lblFabricare.ForeColor = Color.Red;
+                valid = false;
+            }
+            if (!rdbRosu.Checked && !rdbAlb.Checked && !rdbNegru.Checked && !rdbAlbastru.Checked && !rdbGri.Checked && !rdbVerde.Checked)
+            {
+                lblCuloare.ForeColor = Color.Red;
+                valid = false;
+            }
+            if (!ckbCtAuto.Checked && !ckbCtManual.Checked && !ckbAC.Checked && !ckbGPS.Checked && !ckbIncalzire.Checked && !ckbSenzori.Checked)
+            {
+                lblOptiuni.ForeColor = Color.Red;
+                valid = false;
+            }
+            if (string.IsNullOrWhiteSpace(txtPret.Text))
+            {
+                lblPret.ForeColor = Color.Red;
+                valid = false;
+            }
+            if (ckbCtAuto.Checked && ckbCtManual.Checked)
+            {
+                lblOptiuni.ForeColor = Color.Red;
+                MessageBox.Show("Se poate selecta numai o cutie de viteze (automată sau manuală).");
+                valid = false;
+            }
+
+            if (valid)
+            {
+                // Get selected color
+                Culoare culoareSelectata = Culoare.Rosu;
+                if (rdbAlb.Checked) culoareSelectata = Culoare.Alb;
+                else if (rdbNegru.Checked) culoareSelectata = Culoare.Negru;
+                else if (rdbAlbastru.Checked) culoareSelectata = Culoare.Albastru;
+                else if (rdbGri.Checked) culoareSelectata = Culoare.Gri;
+                else if (rdbVerde.Checked) culoareSelectata = Culoare.Verde;
+
+                // Get selected options
+                List<Optiuni> optiuniSelectate = new List<Optiuni>();
+                if (ckbCtAuto.Checked) optiuniSelectate.Add(Optiuni.CutieAutomata);
+                if (ckbCtManual.Checked) optiuniSelectate.Add(Optiuni.CutieManuala);
+                if (ckbAC.Checked) optiuniSelectate.Add(Optiuni.AerConditionat);
+                if (ckbGPS.Checked) optiuniSelectate.Add(Optiuni.NavigatieGPS);
+                if (ckbIncalzire.Checked) optiuniSelectate.Add(Optiuni.ScauneIncalzite);
+                if (ckbSenzori.Checked) optiuniSelectate.Add(Optiuni.SenzoriParcare);
+
+                // Create new transaction
+                TranzactieAuto tranzactie = new TranzactieAuto
+                {
+                    NumeVanzator = txtVanzator.Text,
+                    NumeCumparator = txtCump.Text,
+                    TipMasina = txtTip.Text,
+                    ModelMasina = txtModel.Text,
+                    AnFabricatie = anFabricatie,
+                    Culoare = culoareSelectata,
+                    Optiuni = optiuniSelectate,
+                    DataTranzactie = DateTime.Now,
+                    Pret = decimal.Parse(txtPret.Text)
+                };
+
+                // Add transaction to list and update UI
+                tranzactii.Add(tranzactie);
+                AdaugaTranzactiePeFormular(tranzactie);
+                MessageBox.Show("Tranzacția a fost adăugată cu succes.");
+                managerTranzactii.AdaugaTranzactie(tranzactie);
+                ReseteazaControale();
+            }
+            else
+            {
+                MessageBox.Show("Vă rugăm să completați toate câmpurile obligatorii.");
+            }
+        }
+
+        private void ReseteazaControale()
+        {
+            // Resetează toate câmpurile TextBox
+            txtVanzator.Text = string.Empty;
+            txtCump.Text = string.Empty;
+            txtTip.Text = string.Empty;
+            txtModel.Text = string.Empty;
+            txtFabricare.Text = string.Empty;
+            txtPret.Text = string.Empty;
+
+            // Resetează toate RadioButton-urile
+            rdbRosu.Checked = false;
+            rdbAlb.Checked = false;
+            rdbNegru.Checked = false;
+            rdbAlbastru.Checked = false;
+            rdbGri.Checked = false;
+            rdbVerde.Checked = false;
+
+            // Resetează toate CheckBox-urile
+            ckbCtAuto.Checked = false;
+            ckbCtManual.Checked = false;
+            ckbAC.Checked = false;
+            ckbGPS.Checked = false;
+            ckbIncalzire.Checked = false;
+            ckbSenzori.Checked = false;
         }
 
         private void LoadTransactions()
         {
             string numeFisier = "tranzactii.txt";
-            string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-            string caleFisier = locatieFisierSolutie + "\\" + numeFisier;
-
-
+            string locatieFisierSolutie = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleFisier = Path.Combine(locatieFisierSolutie, numeFisier);
 
             tranzactii = CitesteTranzactii(caleFisier);
 
@@ -292,8 +273,9 @@ namespace TargDeMasiniInterfata
 
         private void AdaugaTranzactiePeFormular(TranzactieAuto tranzactie)
         {
-            // Creare label-uri pentru detalii tranzacție
-            Label[] labels = new Label[8];
+            tableLayoutPanel.RowCount++;
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
             string[] detaliiTranzactie = new string[]
             {
                 tranzactie.NumeVanzator,
@@ -303,39 +285,90 @@ namespace TargDeMasiniInterfata
                 tranzactie.AnFabricatie.ToString(),
                 tranzactie.Culoare.ToString(),
                 tranzactie.DataTranzactie.ToString("yyyy-MM-dd"),
-                tranzactie.Pret.ToString()
+                tranzactie.Pret.ToString(),
+                string.Join(", ", tranzactie.Optiuni.Select(optiune => optiune.ToString()))
             };
 
-            for (int i = 0; i < labels.Length; i++)
+            for (int i = 0; i < detaliiTranzactie.Length; i++)
             {
-                labels[i] = new Label();
-                labels[i].Width = LATIME_CONTROL;
-                labels[i].Text = detaliiTranzactie[i];
-                labels[i].Left = (i + 1) * DIMENSIUNE_PAS_X;
-                labels[i].Top = DIMENSIUNE_PAS_Y * indexRanduri + 40;
-                labels[i].ForeColor = Color.Blue;
-                this.Controls.Add(labels[i]);
+                Label label = new Label();
+                label.Text = detaliiTranzactie[i];
+                label.ForeColor = Color.Black;
+                label.Font = new Font("Segoe UI", 10f); // Dimensiunea textului micșorată
+                label.TextAlign = ContentAlignment.MiddleCenter;
+                label.AutoSize = true;
+                label.Margin = new Padding(SPATIU_INTRE_COLOANE); // Eliminăm complet distanța între coloane
+
+                if (i == detaliiTranzactie.Length - 1)
+                {
+                    // Specific for the last column (Optiuni)
+                    label.Margin = new Padding(0, SPATIU_INTRE_COLOANE, SPATIU_INTRE_COLOANE, SPATIU_INTRE_COLOANE); // Adaugă o margine stânga
+                }
+
+                tableLayoutPanel.Controls.Add(label, i, tableLayoutPanel.RowCount - 1);
             }
-
-            // Creare label pentru Opțiuni
-            Label lblsOptiuni = new Label();
-            lblsOptiuni.Width = LATIME_CONTROL * 4; // Lățime mai mare pentru afișare pe mai multe linii
-            lblsOptiuni.Text = string.Join(", ", tranzactie.Optiuni.Select(optiune => optiune.ToString()));
-            lblsOptiuni.Left = 9 * DIMENSIUNE_PAS_X;
-            lblsOptiuni.Top = DIMENSIUNE_PAS_Y * indexRanduri + 40;
-            lblsOptiuni.ForeColor = Color.Blue;
-            this.Controls.Add(lblsOptiuni);
-
-            indexRanduri++;
         }
 
-
-
-        // Implementarea metodei Form1_Load pentru a gestiona evenimentul de încărcare a formularului
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadTransactions();
         }
+
+        private void btnAdaugareTr_Click(object sender, EventArgs e)
+        {
+            flMeniuAdaugare.Visible = true;
+            flMeniuCautare.Visible = false;
+        }
+
+        private void btnCautareTr_Click(object sender, EventArgs e)
+        {
+            flMeniuAdaugare.Visible = false;
+            flMeniuCautare.Visible = true;
+        }
+
+        private void btnCauta_Click(object sender, EventArgs e)
+        {
+            string tipModel = txtTipModel.Text.Trim();
+            DateTime dataDeLa = dtpDeLa.Value;
+            DateTime dataPanaLa = dtpPanaLa.Value;
+
+            if (string.IsNullOrWhiteSpace(tipModel))
+            {
+                MessageBox.Show("Vă rugăm să introduceți tipul sau modelul mașinii.");
+                return;
+            }
+
+            if (dataDeLa > dataPanaLa)
+            {
+                MessageBox.Show("Data de început nu poate fi mai mare decât data de sfârșit.");
+                return;
+            }
+
+            var tranzactiiFiltrate = tranzactii
+                .Where(t => (t.TipMasina.Contains(tipModel) || t.ModelMasina.Contains(tipModel)) && t.DataTranzactie >= dataDeLa && t.DataTranzactie <= dataPanaLa)
+                .ToList();
+
+            if (tranzactiiFiltrate.Count == 0)
+            {
+                MessageBox.Show("Nu există nicio mașină căutată în perioada specificată.");
+                return;
+            }
+
+            var grupareTranzactii = tranzactiiFiltrate
+                .GroupBy(t => new { t.TipMasina, t.ModelMasina })
+                .Select(g => new { TipModel = $"{g.Key.TipMasina} {g.Key.ModelMasina}", Count = g.Count() })
+                .OrderByDescending(g => g.Count)
+                .FirstOrDefault();
+
+            if (grupareTranzactii != null)
+            {
+                lstAfisare.Items.Clear();
+                lstAfisare.Items.Add($"Cea mai căutată mașină: {grupareTranzactii.TipModel} cu {grupareTranzactii.Count} apariții.");
+            }
+            else
+            {
+                MessageBox.Show("Nu există nicio mașină căutată în perioada specificată.");
+            }
+        }
     }
 }
-

@@ -1,2 +1,5 @@
 Ion Ionescu;Maria Ioana;Opel;Astra;2017;Rosu;CutieManuala, AerConditionat, NavigatieGPS;2024-04-24;15000
 Alex Mihai;Elena Stan;Ford;Focus;2015;Albastru;CutieAutomata, ScauneIncalzite, SenzoriParcare;2024-03-15;16000
+Alex Burghelea;Adonicioaie Ovidiu;Audi;A4;2005;Negru;CutieManuala, AerConditionat, NavigatieGPS, SenzoriParcare;2024-04-25;5000
+Guz Eva;Robert Mihai;BMW;X6;2010;Verde;CutieAutomata, AerConditionat, NavigatieGPS, SenzoriParcare;2024-05-19;20000
+Matei Popescu;Marcel Craciun;Ford;Focus;2015;Rosu;CutieAutomata, NavigatieGPS, ScauneIncalzite;2024-05-19;16000

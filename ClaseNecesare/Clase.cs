@@ -29,7 +29,8 @@ namespace Clase
         Alb = 2,
         Negru = 3,
         Albastru = 4,
-        Gri = 5
+        Gri = 5,
+        Verde = 6
     }
 
     [Flags]
