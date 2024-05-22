@@ -204,22 +204,22 @@ namespace TargDeMasiniInterfata
             lblPret.ForeColor = Color.White;
             lblOptiuni.ForeColor = Color.White;
 
-            if (string.IsNullOrWhiteSpace(txtVanzator.Text) || !txtVanzator.Text.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(txtVanzator.Text) || txtVanzator.Text.All(char.IsDigit))
             {
                 valid = false;
                 lblVanzator.ForeColor = Color.Red;
             }
-            if (string.IsNullOrWhiteSpace(txtCump.Text) || !txtCump.Text.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(txtCump.Text) || txtCump.Text.All(char.IsDigit))
             {
                 valid = false;
                 lblCump.ForeColor = Color.Red;
             }
-            if (string.IsNullOrWhiteSpace(txtTip.Text) || !txtTip.Text.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(txtTip.Text) || txtTip.Text.All(char.IsDigit))
             {
                 valid = false;
                 lblTip.ForeColor = Color.Red;
             }
-            if (string.IsNullOrWhiteSpace(txtModel.Text) || !txtModel.Text.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(txtModel.Text))
             {
                 valid = false;
                 lblModel.ForeColor = Color.Red;
@@ -290,7 +290,7 @@ namespace TargDeMasiniInterfata
             }
             else
             {
-                MessageBox.Show("Vă rugăm să completați toate câmpurile obligatorii.");
+                MessageBox.Show("Vă rugăm să completați câmpurile corespunzătoare și corect.");
             }
         }
 

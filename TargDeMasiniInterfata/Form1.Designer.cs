@@ -639,7 +639,7 @@
             // 
             // txtFabricare
             // 
-            this.txtFabricare.Location = new System.Drawing.Point(25, -3);
+            this.txtFabricare.Location = new System.Drawing.Point(25, -1);
             this.txtFabricare.Name = "txtFabricare";
             this.txtFabricare.Size = new System.Drawing.Size(208, 20);
             this.txtFabricare.TabIndex = 12;
