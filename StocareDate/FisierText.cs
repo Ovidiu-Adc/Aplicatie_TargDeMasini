@@ -31,6 +31,24 @@ namespace StocareDate
                 Console.WriteLine($"A apărut o eroare la scrierea în fișier: {ex.Message}");
             }
         }
+        public void SalveazaTranzactii(List<TranzactieAuto> tranzactii)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(caleFisier))
+                {
+                    foreach (var tranzactie in tranzactii)
+                    {
+                        string tranzactieAsString = RaportAuto.TranzactieToString(tranzactie);
+                        sw.WriteLine(tranzactieAsString);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Eroare la salvarea tranzacțiilor în fișier: {ex.Message}");
+            }
+        }
 
         public List<TranzactieAuto> CitesteTranzactii()
         {

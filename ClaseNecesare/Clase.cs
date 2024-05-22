@@ -79,15 +79,6 @@ namespace Clase
                 Console.WriteLine($"Nu s-a gasit nicio masina in perioada specificata.");
         }
 
-        public void GraficPretPentruModel(string model, DateTime dataDeLa, DateTime dataPanaLa)
-        {
-            // cod ..
-        }
-
-        public void TranzactiiPeZi(DateTime zi)
-        {
-            // cod ..
-        }
 
         public static string OptiuniToString(List<Optiuni> optiuni)
         {

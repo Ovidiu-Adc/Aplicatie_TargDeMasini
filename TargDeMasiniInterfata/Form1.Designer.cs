@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblVanzator = new System.Windows.Forms.Label();
             this.lblCump = new System.Windows.Forms.Label();
@@ -56,6 +57,14 @@
             this.btnAdauga = new System.Windows.Forms.Button();
             this.lblFabricare = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.btnAdaugareTr = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.btnCautareTr = new System.Windows.Forms.Button();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.btnEditareTr = new System.Windows.Forms.Button();
+            this.flMeniuAdaugare = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTitlu1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -75,31 +84,37 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.lblTitlu2 = new System.Windows.Forms.Label();
-            this.flMeniuAdaugare = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.btnCautareTr = new System.Windows.Forms.Button();
-            this.btnAdaugareTr = new System.Windows.Forms.Button();
             this.flMeniuCautare = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTipModel = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.txtTipModel = new System.Windows.Forms.TextBox();
             this.lblDeLa = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.dtpDeLa = new System.Windows.Forms.DateTimePicker();
             this.lblPanaLa = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.dtpPanaLa = new System.Windows.Forms.DateTimePicker();
             this.panel26 = new System.Windows.Forms.Panel();
             this.btnCauta = new System.Windows.Forms.Button();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtpDeLa = new System.Windows.Forms.DateTimePicker();
             this.lstAfisare = new System.Windows.Forms.ListBox();
-            this.lblTipModel = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.txtTipModel = new System.Windows.Forms.TextBox();
+            this.flMeniuEditare = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridTranzactii = new System.Windows.Forms.DataGridView();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.btnRefreh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.flMeniuAdaugare.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -112,16 +127,16 @@
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
-            this.flMeniuAdaugare.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.flMeniuCautare.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel26.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel17.SuspendLayout();
+            this.flMeniuEditare.SuspendLayout();
+            this.panel19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTranzactii)).BeginInit();
+            this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblVanzator
@@ -428,6 +443,123 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(418, 623);
             this.flowLayoutPanel1.TabIndex = 22;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.flowLayoutPanel2.Controls.Add(this.panel13);
+            this.flowLayoutPanel2.Controls.Add(this.panel14);
+            this.flowLayoutPanel2.Controls.Add(this.panel18);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(410, 91);
+            this.flowLayoutPanel2.TabIndex = 27;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.panel13.Controls.Add(this.btnAdaugareTr);
+            this.panel13.Location = new System.Drawing.Point(3, 3);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(134, 83);
+            this.panel13.TabIndex = 27;
+            // 
+            // btnAdaugareTr
+            // 
+            this.btnAdaugareTr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.btnAdaugareTr.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdaugareTr.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAdaugareTr.Image = global::TargDeMasiniInterfata.Properties.Resources.Data_Import;
+            this.btnAdaugareTr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdaugareTr.Location = new System.Drawing.Point(-26, -20);
+            this.btnAdaugareTr.Name = "btnAdaugareTr";
+            this.btnAdaugareTr.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnAdaugareTr.Size = new System.Drawing.Size(171, 125);
+            this.btnAdaugareTr.TabIndex = 26;
+            this.btnAdaugareTr.Text = "          Adaugare";
+            this.btnAdaugareTr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdaugareTr.UseVisualStyleBackColor = false;
+            this.btnAdaugareTr.Click += new System.EventHandler(this.btnAdaugareTr_Click);
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.panel14.Controls.Add(this.btnCautareTr);
+            this.panel14.Location = new System.Drawing.Point(143, 3);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(123, 83);
+            this.panel14.TabIndex = 28;
+            // 
+            // btnCautareTr
+            // 
+            this.btnCautareTr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.btnCautareTr.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCautareTr.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCautareTr.Image = global::TargDeMasiniInterfata.Properties.Resources.Icon;
+            this.btnCautareTr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCautareTr.Location = new System.Drawing.Point(-24, -17);
+            this.btnCautareTr.Name = "btnCautareTr";
+            this.btnCautareTr.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnCautareTr.Size = new System.Drawing.Size(159, 118);
+            this.btnCautareTr.TabIndex = 29;
+            this.btnCautareTr.Text = "         Cautare";
+            this.btnCautareTr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCautareTr.UseVisualStyleBackColor = false;
+            this.btnCautareTr.Click += new System.EventHandler(this.btnCautareTr_Click);
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.panel18.Controls.Add(this.btnEditareTr);
+            this.panel18.Location = new System.Drawing.Point(272, 3);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(132, 83);
+            this.panel18.TabIndex = 31;
+            // 
+            // btnEditareTr
+            // 
+            this.btnEditareTr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.btnEditareTr.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditareTr.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnEditareTr.Image = global::TargDeMasiniInterfata.Properties.Resources.edit;
+            this.btnEditareTr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditareTr.Location = new System.Drawing.Point(-24, -26);
+            this.btnEditareTr.Name = "btnEditareTr";
+            this.btnEditareTr.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnEditareTr.Size = new System.Drawing.Size(170, 136);
+            this.btnEditareTr.TabIndex = 30;
+            this.btnEditareTr.Text = "         Editare";
+            this.btnEditareTr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditareTr.UseVisualStyleBackColor = false;
+            this.btnEditareTr.Click += new System.EventHandler(this.btnEditareTr_Click);
+            // 
+            // flMeniuAdaugare
+            // 
+            this.flMeniuAdaugare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.flMeniuAdaugare.Controls.Add(this.lblTitlu1);
+            this.flMeniuAdaugare.Controls.Add(this.lblVanzator);
+            this.flMeniuAdaugare.Controls.Add(this.panel1);
+            this.flMeniuAdaugare.Controls.Add(this.lblCump);
+            this.flMeniuAdaugare.Controls.Add(this.panel2);
+            this.flMeniuAdaugare.Controls.Add(this.lblTip);
+            this.flMeniuAdaugare.Controls.Add(this.panel3);
+            this.flMeniuAdaugare.Controls.Add(this.lblModel);
+            this.flMeniuAdaugare.Controls.Add(this.panel4);
+            this.flMeniuAdaugare.Controls.Add(this.lblFabricare);
+            this.flMeniuAdaugare.Controls.Add(this.panel5);
+            this.flMeniuAdaugare.Controls.Add(this.panel7);
+            this.flMeniuAdaugare.Controls.Add(this.panel6);
+            this.flMeniuAdaugare.Controls.Add(this.lblData);
+            this.flMeniuAdaugare.Controls.Add(this.panel8);
+            this.flMeniuAdaugare.Controls.Add(this.lblPret);
+            this.flMeniuAdaugare.Controls.Add(this.panel9);
+            this.flMeniuAdaugare.Controls.Add(this.panel10);
+            this.flMeniuAdaugare.Controls.Add(this.panel11);
+            this.flMeniuAdaugare.Controls.Add(this.panel12);
+            this.flMeniuAdaugare.Location = new System.Drawing.Point(3, 100);
+            this.flMeniuAdaugare.Name = "flMeniuAdaugare";
+            this.flMeniuAdaugare.Size = new System.Drawing.Size(415, 556);
+            this.flMeniuAdaugare.TabIndex = 24;
+            // 
             // lblTitlu1
             // 
             this.lblTitlu1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -592,96 +724,6 @@
             this.lblTitlu2.TabIndex = 23;
             this.lblTitlu2.Text = "TABELUL CU TRANZACTII AUTO";
             // 
-            // flMeniuAdaugare
-            // 
-            this.flMeniuAdaugare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.flMeniuAdaugare.Controls.Add(this.lblTitlu1);
-            this.flMeniuAdaugare.Controls.Add(this.lblVanzator);
-            this.flMeniuAdaugare.Controls.Add(this.panel1);
-            this.flMeniuAdaugare.Controls.Add(this.lblCump);
-            this.flMeniuAdaugare.Controls.Add(this.panel2);
-            this.flMeniuAdaugare.Controls.Add(this.lblTip);
-            this.flMeniuAdaugare.Controls.Add(this.panel3);
-            this.flMeniuAdaugare.Controls.Add(this.lblModel);
-            this.flMeniuAdaugare.Controls.Add(this.panel4);
-            this.flMeniuAdaugare.Controls.Add(this.lblFabricare);
-            this.flMeniuAdaugare.Controls.Add(this.panel5);
-            this.flMeniuAdaugare.Controls.Add(this.panel7);
-            this.flMeniuAdaugare.Controls.Add(this.panel6);
-            this.flMeniuAdaugare.Controls.Add(this.lblData);
-            this.flMeniuAdaugare.Controls.Add(this.panel8);
-            this.flMeniuAdaugare.Controls.Add(this.lblPret);
-            this.flMeniuAdaugare.Controls.Add(this.panel9);
-            this.flMeniuAdaugare.Controls.Add(this.panel10);
-            this.flMeniuAdaugare.Controls.Add(this.panel11);
-            this.flMeniuAdaugare.Controls.Add(this.panel12);
-            this.flMeniuAdaugare.Location = new System.Drawing.Point(3, 100);
-            this.flMeniuAdaugare.Name = "flMeniuAdaugare";
-            this.flMeniuAdaugare.Size = new System.Drawing.Size(415, 556);
-            this.flMeniuAdaugare.TabIndex = 24;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.panel13.Controls.Add(this.btnAdaugareTr);
-            this.panel13.Location = new System.Drawing.Point(3, 3);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(198, 83);
-            this.panel13.TabIndex = 27;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.flowLayoutPanel2.Controls.Add(this.panel13);
-            this.flowLayoutPanel2.Controls.Add(this.panel14);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(410, 91);
-            this.flowLayoutPanel2.TabIndex = 27;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.panel14.Controls.Add(this.btnCautareTr);
-            this.panel14.Location = new System.Drawing.Point(207, 3);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(195, 83);
-            this.panel14.TabIndex = 28;
-            // 
-            // btnCautareTr
-            // 
-            this.btnCautareTr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.btnCautareTr.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCautareTr.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCautareTr.Image = global::TargDeMasiniInterfata.Properties.Resources.Icon;
-            this.btnCautareTr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCautareTr.Location = new System.Drawing.Point(-9, -43);
-            this.btnCautareTr.Name = "btnCautareTr";
-            this.btnCautareTr.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnCautareTr.Size = new System.Drawing.Size(269, 159);
-            this.btnCautareTr.TabIndex = 29;
-            this.btnCautareTr.Text = "         Cautare";
-            this.btnCautareTr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCautareTr.UseVisualStyleBackColor = false;
-            this.btnCautareTr.Click += new System.EventHandler(this.btnCautareTr_Click);
-            // 
-            // btnAdaugareTr
-            // 
-            this.btnAdaugareTr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.btnAdaugareTr.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdaugareTr.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdaugareTr.Image = global::TargDeMasiniInterfata.Properties.Resources.Data_Import;
-            this.btnAdaugareTr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdaugareTr.Location = new System.Drawing.Point(-6, -26);
-            this.btnAdaugareTr.Name = "btnAdaugareTr";
-            this.btnAdaugareTr.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnAdaugareTr.Size = new System.Drawing.Size(214, 125);
-            this.btnAdaugareTr.TabIndex = 26;
-            this.btnAdaugareTr.Text = "            Adaugare";
-            this.btnAdaugareTr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdaugareTr.UseVisualStyleBackColor = false;
-            this.btnAdaugareTr.Click += new System.EventHandler(this.btnAdaugareTr_Click);
-            // 
             // flMeniuCautare
             // 
             this.flMeniuCautare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
@@ -712,6 +754,53 @@
             this.label1.Text = "CAUTARE TRANZACTIE";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.panel15.Controls.Add(this.label4);
+            this.panel15.Location = new System.Drawing.Point(3, 120);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(412, 46);
+            this.panel15.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(0, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(340, 20);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Cea mai cautata masina intr-o anumita perioada:";
+            // 
+            // lblTipModel
+            // 
+            this.lblTipModel.AutoSize = true;
+            this.lblTipModel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipModel.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTipModel.Location = new System.Drawing.Point(3, 169);
+            this.lblTipModel.Name = "lblTipModel";
+            this.lblTipModel.Size = new System.Drawing.Size(134, 20);
+            this.lblTipModel.TabIndex = 26;
+            this.lblTipModel.Text = "Tipul sau modelul:";
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.panel17.Controls.Add(this.txtTipModel);
+            this.panel17.Location = new System.Drawing.Point(143, 172);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(262, 17);
+            this.panel17.TabIndex = 27;
+            // 
+            // txtTipModel
+            // 
+            this.txtTipModel.Location = new System.Drawing.Point(1, -3);
+            this.txtTipModel.Name = "txtTipModel";
+            this.txtTipModel.Size = new System.Drawing.Size(208, 20);
+            this.txtTipModel.TabIndex = 12;
+            // 
             // lblDeLa
             // 
             this.lblDeLa.AutoSize = true;
@@ -731,6 +820,13 @@
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(345, 17);
             this.panel16.TabIndex = 24;
+            // 
+            // dtpDeLa
+            // 
+            this.dtpDeLa.Location = new System.Drawing.Point(87, -3);
+            this.dtpDeLa.Name = "dtpDeLa";
+            this.dtpDeLa.Size = new System.Drawing.Size(208, 20);
+            this.dtpDeLa.TabIndex = 26;
             // 
             // lblPanaLa
             // 
@@ -781,33 +877,6 @@
             this.btnCauta.UseVisualStyleBackColor = false;
             this.btnCauta.Click += new System.EventHandler(this.btnCauta_Click);
             // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.panel15.Controls.Add(this.label4);
-            this.panel15.Location = new System.Drawing.Point(3, 120);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(412, 46);
-            this.panel15.TabIndex = 26;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(0, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(340, 20);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Cea mai cautata masina intr-o anumita perioada:";
-            // 
-            // dtpDeLa
-            // 
-            this.dtpDeLa.Location = new System.Drawing.Point(87, -3);
-            this.dtpDeLa.Name = "dtpDeLa";
-            this.dtpDeLa.Size = new System.Drawing.Size(208, 20);
-            this.dtpDeLa.TabIndex = 26;
-            // 
             // lstAfisare
             // 
             this.lstAfisare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
@@ -820,38 +889,101 @@
             this.lstAfisare.Size = new System.Drawing.Size(410, 84);
             this.lstAfisare.TabIndex = 26;
             // 
-            // lblTipModel
+            // flMeniuEditare
             // 
-            this.lblTipModel.AutoSize = true;
-            this.lblTipModel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipModel.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTipModel.Location = new System.Drawing.Point(3, 169);
-            this.lblTipModel.Name = "lblTipModel";
-            this.lblTipModel.Size = new System.Drawing.Size(134, 20);
-            this.lblTipModel.TabIndex = 26;
-            this.lblTipModel.Text = "Tipul sau modelul:";
+            this.flMeniuEditare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.flMeniuEditare.Controls.Add(this.label2);
+            this.flMeniuEditare.Controls.Add(this.panel19);
+            this.flMeniuEditare.Controls.Add(this.dataGridTranzactii);
+            this.flMeniuEditare.Controls.Add(this.panel20);
+            this.flMeniuEditare.Location = new System.Drawing.Point(3, 100);
+            this.flMeniuEditare.Name = "flMeniuEditare";
+            this.flMeniuEditare.Size = new System.Drawing.Size(415, 556);
+            this.flMeniuEditare.TabIndex = 27;
+            this.flMeniuEditare.Visible = false;
             // 
-            // panel17
+            // label2
             // 
-            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.panel17.Controls.Add(this.txtTipModel);
-            this.panel17.Location = new System.Drawing.Point(143, 172);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(262, 17);
-            this.panel17.TabIndex = 27;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(415, 117);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "EDITARE TRANZACTIE";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtTipModel
+            // panel19
             // 
-            this.txtTipModel.Location = new System.Drawing.Point(1, -3);
-            this.txtTipModel.Name = "txtTipModel";
-            this.txtTipModel.Size = new System.Drawing.Size(208, 20);
-            this.txtTipModel.TabIndex = 12;
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.panel19.Controls.Add(this.label3);
+            this.panel19.Location = new System.Drawing.Point(3, 120);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(412, 46);
+            this.panel19.TabIndex = 26;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(17, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(382, 20);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Va rugam sa editati oricare tranzactie dupa bunul plac:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // dataGridTranzactii
+            // 
+            this.dataGridTranzactii.AllowUserToAddRows = false;
+            this.dataGridTranzactii.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridTranzactii.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTranzactii.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridTranzactii.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridTranzactii.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridTranzactii.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridTranzactii.Location = new System.Drawing.Point(3, 172);
+            this.dataGridTranzactii.Name = "dataGridTranzactii";
+            this.dataGridTranzactii.Size = new System.Drawing.Size(409, 249);
+            this.dataGridTranzactii.TabIndex = 28;
+            this.dataGridTranzactii.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTranzactii_CellContentClick);
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.panel20.Controls.Add(this.btnRefreh);
+            this.panel20.Location = new System.Drawing.Point(3, 427);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(412, 47);
+            this.panel20.TabIndex = 28;
+            // 
+            // btnRefreh
+            // 
+            this.btnRefreh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.btnRefreh.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreh.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRefreh.Location = new System.Drawing.Point(101, 3);
+            this.btnRefreh.Name = "btnRefreh";
+            this.btnRefreh.Size = new System.Drawing.Size(208, 38);
+            this.btnRefreh.TabIndex = 19;
+            this.btnRefreh.Text = "Refresh";
+            this.btnRefreh.UseVisualStyleBackColor = false;
+            this.btnRefreh.Click += new System.EventHandler(this.btnRefreh_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1372, 623);
+            this.ClientSize = new System.Drawing.Size(1564, 623);
+            this.Controls.Add(this.flMeniuEditare);
             this.Controls.Add(this.flMeniuCautare);
             this.Controls.Add(this.lblTitlu2);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -865,6 +997,12 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.flMeniuAdaugare.ResumeLayout(false);
+            this.flMeniuAdaugare.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -885,20 +1023,20 @@
             this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
-            this.flMeniuAdaugare.ResumeLayout(false);
-            this.flMeniuAdaugare.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
             this.flMeniuCautare.ResumeLayout(false);
             this.flMeniuCautare.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel22.ResumeLayout(false);
-            this.panel26.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel22.ResumeLayout(false);
+            this.panel26.ResumeLayout(false);
+            this.flMeniuEditare.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTranzactii)).EndInit();
+            this.panel20.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -973,6 +1111,15 @@
         private System.Windows.Forms.Label lblTipModel;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.TextBox txtTipModel;
+        private System.Windows.Forms.Button btnEditareTr;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.FlowLayoutPanel flMeniuEditare;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridTranzactii;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Button btnRefreh;
     }
 }
 
