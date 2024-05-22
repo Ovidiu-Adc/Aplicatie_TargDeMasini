@@ -22,10 +22,9 @@
 
 - **Aplicatie_TargDeMasini**
   - **TargDeMasiniInterfata**
-    - **Form1.cs**: Acesta este fișierul principal al interfeței utilizatorului. Conține codul pentru inițializarea componentelor UI și gestionarea evenimentelor (ex. click pe butoane).
+    - **Form1.cs**: Acesta este fișierul principal al interfeței utilizatorului. Conține codul pentru inițializarea componentelor UI și gestionarea evenimentelor
     - **Form1.Designer.cs**: Conține codul generat automat pentru designul formularului.
     - **Program.cs**: Punctul de intrare al aplicației. Inițializează și rulează aplicația.
-    - **Properties**: Conține fișierele de configurare ale proiectului, cum ar fi AssemblyInfo.cs și Resources.Designer.cs.
   - **ClaseNecesare**
     - **Clase.cs**: Conține definițiile claselor utilizate în proiect, cum ar fi `TranzactieAuto`, `Culoare`, și `Optiuni`.
   - **StocareDate**
